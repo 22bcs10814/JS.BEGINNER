@@ -1,0 +1,32 @@
+let nftCollection = [];
+
+function mintNFT(name, artist, description, creationDate) {
+    const nft = {
+        name: name,
+        artist: artist,
+        description: description,
+        creationDate: creationDate
+    };
+    nftCollection.push(nft);
+}
+
+function listNFTs() {
+    nftCollection.forEach(nft => {
+        console.log("Name: " + nft.name);
+        console.log("Artist: " + nft.artist);
+        console.log("Description: " + nft.description);
+        console.log("Creation Date: " + nft.creationDate);
+        console.log("--------------------------");
+    });
+}
+
+function getTotalSupply() {
+    console.log("Total NFTs Minted: " + nftCollection.length);
+}
+
+mintNFT("Art Piece 1", "Artist y", "A beautiful piece of art", "2024-05-01");
+mintNFT("Art Piece 2", "Artist x", "Another beautiful piece of art", "2024-05-15");
+mintNFT("Art Piece 3", "Artist z", "Yet another beautiful piece of art", "2024-06-01");
+
+listNFTs();
+getTotalSupply();
